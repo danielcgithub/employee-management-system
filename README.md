@@ -11,3 +11,18 @@ docker run --name mysql-ems -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=users_
 
 # API endpoint
 <host>:9000/api/v1/employees
+
+
+# Angular
+## Components
+create-employee
+employee-list
+employee-details
+## Services
+employee.service.ts - Service for Http Client methods
+## Modules
+FormsModule
+HttpClientModule
+AppRoutingModule.
+## Employee Class (Typescript class)
+employee.ts: class Employee (id, firstName, lastName, emailId)
