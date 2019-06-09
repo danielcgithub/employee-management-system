@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EmployeeManagementSystemServerApplication<employee-management-system-client>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.danielcgithub.employeemanagementsystemserver.EmployeeManagementSystemServerApplication",
+            "projectName": "employee-management-system-client",
+            "args": ""
+        }
+    ]
+}
