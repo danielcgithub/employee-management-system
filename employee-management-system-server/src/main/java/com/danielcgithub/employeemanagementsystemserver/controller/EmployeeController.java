@@ -37,13 +37,20 @@ public class EmployeeController {
 
     @GetMapping(value = "/employees")
     public List<Employee> getAllEmployees() {
+        createFirstEmployee();
         logger.info("getting all employees");
         return employeeRepository.findAll();
+    }
+
+    private void createFirstEmployee() {
+        logger.info("Creating first employee");
+        employeeRepository.save(new Employee("Daniel", "Cunniffe", "d.c@gmail.com"));
     }
 
     @GetMapping(value = "/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Long employeeId)
             throws ResourceNotFoundException {
+        logger.info("getting employee with id %s", employeeId);
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
         return ResponseEntity.ok(employee);
