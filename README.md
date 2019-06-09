@@ -7,3 +7,7 @@
 docker run --name mysql-ems -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=users_database -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=Passw0rd -p 3306:3306 -d mysql/mysql-server:latest
 
 (Need to include in docker compose/helm chart)
+
+
+# API endpoint
+<host>:9000/api/v1/employees

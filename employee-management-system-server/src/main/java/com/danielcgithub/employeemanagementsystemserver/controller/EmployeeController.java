@@ -5,12 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
-import javax.xml.ws.Response;
 
 import com.danielcgithub.employeemanagementsystemserver.exception.ResourceNotFoundException;
 import com.danielcgithub.employeemanagementsystemserver.model.Employee;
 import com.danielcgithub.employeemanagementsystemserver.repository.EmployeeRepository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,11 +30,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class EmployeeController {
 
+    Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
     @GetMapping(value = "/employees")
     public List<Employee> getAllEmployees() {
+        logger.info("getting all employees");
         return employeeRepository.findAll();
     }
 
