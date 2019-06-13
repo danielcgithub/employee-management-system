@@ -24,12 +24,12 @@ public class EmployeeManagementSystemServerApplicationTests {
 	@Test
 	public void test_should_return_all_employees() {
 		WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/api/v1/employees"))
-				.willReturn(WireMock.aResponse().withStatus(201)));
+				.willReturn(WireMock.aResponse().withStatus(200)));
 
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<List> responseEntity = restTemplate.getForEntity("http://localhost:9000/api/v1/employees",
 				List.class);
-		BDDAssertions.assertThat(responseEntity.getStatusCodeValue()).isEqualTo(201);
+		BDDAssertions.assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
 	}
 
 }
