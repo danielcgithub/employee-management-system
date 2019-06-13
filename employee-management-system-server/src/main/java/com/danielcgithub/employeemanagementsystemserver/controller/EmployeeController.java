@@ -13,6 +13,7 @@ import com.danielcgithub.employeemanagementsystemserver.repository.EmployeeRepos
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping(value = "/employees")
+    @GetMapping(value = "/employees", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Employee> getAllEmployees() {
         createFirstEmployee();
         logger.info("getting all employees");
