@@ -29,3 +29,6 @@ HttpClientModule
 AppRoutingModule.
 ## Employee Class (Typescript class)
 employee.ts: class Employee (id, firstName, lastName, emailId)
+
+# Contract Tests
+https://www.youtube.com/watch?v=MDydAqL4mYE
