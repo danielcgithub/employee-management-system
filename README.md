@@ -18,17 +18,17 @@ $ java -jar target/employee-management-system-server-0.0.1-SNAPSHOT.jar
 $ npm start
 
 ## Components
-create-employee
-employee-list
-employee-details
+* create-employee
+* employee-list
+* employee-details
 ## Services
-employee.service.ts - Service for Http Client methods
+* employee.service.ts - Service for Http Client methods
 ## Modules
-FormsModule
-HttpClientModule
-AppRoutingModule.
+* FormsModule
+* HttpClientModule
+* AppRoutingModule
 ## Employee Class (Typescript class)
-employee.ts: class Employee (id, firstName, lastName, emailId)
+* employee.ts: class Employee (id, firstName, lastName, emailId)
 
 # Contract Tests
-https://www.youtube.com/watch?v=MDydAqL4mYE
+* https://www.youtube.com/watch?v=MDydAqL4mYE
