@@ -7,6 +7,7 @@ docker run --name mysql-ems -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=users_
 (Need to include in docker compose/helm chart)
 
 # Run spring boot backend
+$ mvn clean install
 $ java -jar target/employee-management-system-server-0.0.1-SNAPSHOT.jar
 
 # API endpoint
