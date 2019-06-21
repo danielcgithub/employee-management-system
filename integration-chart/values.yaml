@@ -1,0 +1,5 @@
+mysql:
+  mysqlRootPassword: root
+  mysqlDatabase: users_database
+  mysqlUser: dbuser
+  mysqlPassword: Passw0rd

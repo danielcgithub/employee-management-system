@@ -33,3 +33,11 @@ employee.ts: class Employee (id, firstName, lastName, emailId)
 
 # Contract Tests
 https://www.youtube.com/watch?v=MDydAqL4mYE
+
+
+# Helm
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm dependency update
+helm install --debug --name <user input name you want> ./integration-chart/
+helm list
+helm delete <user input name you want>
