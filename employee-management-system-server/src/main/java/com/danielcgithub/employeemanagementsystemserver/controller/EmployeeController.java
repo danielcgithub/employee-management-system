@@ -38,14 +38,8 @@ public class EmployeeController {
 
     @GetMapping(value = "/employees", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Employee> getAllEmployees() {
-        createFirstEmployee();
         logger.info("getting all employees");
         return employeeRepository.findAll();
-    }
-
-    private void createFirstEmployee() {
-        logger.info("Creating first employee");
-        employeeRepository.save(new Employee("Daniel", "Cunniffe", "d.c@gmail.com"));
     }
 
     @GetMapping(value = "/employees/{id}")
@@ -57,7 +51,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employee);
     }
 
-    @PostMapping("/employees")
+    @PostMapping(value = "/employees", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Employee createEmployee(@Valid @RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
