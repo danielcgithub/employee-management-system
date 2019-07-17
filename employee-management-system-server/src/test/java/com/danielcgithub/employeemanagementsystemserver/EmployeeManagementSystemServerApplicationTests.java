@@ -76,13 +76,17 @@ public class EmployeeManagementSystemServerApplicationTests {
 
 		List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
 		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-		converter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
+		// converter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
+		List supportedMediaTypes = new ArrayList<MediaType>();
+		supportedMediaTypes.add(MediaType.APPLICATION_JSON);
+		converter.setSupportedMediaTypes(supportedMediaTypes);
 		messageConverters.add(converter);
 		restTemplate.setMessageConverters(messageConverters);
 
 		Employee employee = new Employee("testFirstName", "testLastName", "emailaddress@gmail.com");
 
-		HttpEntity<Employee> request = new HttpEntity<>(employee);
+		HttpEntity<Employee> request = new HttpEntity<Employee>(employee);
+
 		ResponseEntity<Employee> responseEntity = restTemplate.exchange(new URI(stubUrl), HttpMethod.POST, request,
 				Employee.class);
 

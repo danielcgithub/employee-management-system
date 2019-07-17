@@ -42,7 +42,7 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
-    @GetMapping(value = "/employees/{id}")
+    @GetMapping(value = "/employees/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Long employeeId)
             throws ResourceNotFoundException {
         logger.info("getting employee with id %s", employeeId);
